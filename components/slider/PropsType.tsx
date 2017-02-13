@@ -1,4 +1,4 @@
-interface SliderProps {
+export interface SliderProps {
   onChange?: (value?: number) => void;
   onAfterChange?: (value?: number) => void;
   defaultValue?: number;
@@ -10,6 +10,10 @@ interface SliderProps {
   disabled?: boolean;
   /* web only */
   prefixCls?: string;
+  plugin?: any;
 }
 
-export default SliderProps;
+export interface RangeProps {
+  /* web only */
+  prefixCls?: string;
+}

@@ -9,8 +9,10 @@ title: 基本
 
 
 ```jsx
-
 import { Slider, WingBlank, WhiteSpace } from 'antd-mobile';
+
+const Range = Slider.Range;
+const TooltipPlugin = Slider.TooltipPlugin;
 
 const App = React.createClass({
   render() {
@@ -18,13 +20,18 @@ const App = React.createClass({
       <div className="am-slider-example">
         <WhiteSpace size="lg" />
         <WingBlank size="lg">
-          <p className="title">单模块</p>
-          <Slider defaultValue={26} min={0} max={100} />
+          <p className="title">Slider</p>
+          <Slider defaultValue={26} min={0} max={100} plugin={[TooltipPlugin]} />
+        </WingBlank>
+        <WhiteSpace size="lg" />
+        <WingBlank size="lg">
+          <p className="title">Range</p>
+          <Range min={0} max={20} defaultValue={[3, 10]} />
         </WingBlank>
         <WhiteSpace size="lg" />
         <WingBlank size="lg">
           <p className="title">不可用状态</p>
-          <Slider defaultValue={26} disabled />
+          <Slider defaultValue={26} disabled plugin={[TooltipPlugin]} />
         </WingBlank>
         <WhiteSpace size="lg" />
       </div>

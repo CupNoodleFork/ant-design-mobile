@@ -11,6 +11,8 @@ title: 带 icon 的滑块
 import { Slider, WhiteSpace, WingBlank } from 'antd-mobile';
 import Icon from '../../icon';
 
+const TooltipPlugin = Slider.TooltipPlugin;
+
 const IconSlider = React.createClass({
   getInitialState() {
     const max = this.props.max;
@@ -39,7 +41,7 @@ const IconSlider = React.createClass({
         <WingBlank size="lg">
           <div className="iconWrapper">
             <Icon className={this.state.preIconClass} type={this.props.icon[0]} />
-            <Slider {...this.props} onChange={this.handleChange} value={this.state.sliderValue} />
+            <Slider {...this.props} onChange={this.handleChange} value={this.state.sliderValue} plugin={[TooltipPlugin]} />
             <Icon className={this.state.nextIconClass} type={this.props.icon[1]} />
           </div>
         </WingBlank>

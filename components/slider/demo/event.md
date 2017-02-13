@@ -10,6 +10,8 @@ title: 事件
 ````jsx
 import { Slider, WingBlank, WhiteSpace } from 'antd-mobile';
 
+const TooltipPlugin = Slider.TooltipPlugin;
+
 function log(value) {
   console.log(value);
 }
@@ -20,11 +22,11 @@ const App = React.createClass({
       <div>
         <WhiteSpace size="lg" />
         <WingBlank size="lg">
-          <Slider defaultValue={30} onChange={log} />
+          <Slider defaultValue={30} onChange={log} plugin={[TooltipPlugin]} />
         </WingBlank>
         <WhiteSpace size="lg" />
         <WingBlank size="lg">
-          <Slider defaultValue={30} onAfterChange={log} />
+          <Slider defaultValue={30} onAfterChange={log} plugin={[TooltipPlugin]} />
         </WingBlank>
         <WhiteSpace size="lg" />
       </div>
